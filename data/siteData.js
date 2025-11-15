@@ -13,7 +13,7 @@ export const siteAuthor = {
   email: "patoletusharajit@gmail.com",
   phone: "+91 7767951871",
   status: "Available for work",
-  birthday: "Not specified",
+  birthday: "22-09-2000",
 };
 
 // META / SEO DEFAULTS
@@ -28,7 +28,7 @@ export const assetPaths = {
   // HOW TO REPLACE PROFILE IMAGE:
   // 1. Put your profile picture at /public/images/tushar-profile.jpg
   // 2. Or update the path below to match your filename
-  profileImage: "/images/tushar-profile.jpg",
+  profileImage: "/images/tushar-profile.jpeg",
 
   // HOW TO UPDATE RESUME FILE:
   // 1. Export your resume as PDF
@@ -39,8 +39,8 @@ export const assetPaths = {
 
 // SOCIAL LINKS
 export const socialLinks = [
-  { label: "GitHub", href: "https://github.com/tusharpatole", icon: "github" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/tusharpatole", icon: "linkedin" },
+  { label: "GitHub", href: "https://github.com/Patoletusharr", icon: "github" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/tushar-patole-58122b31a/", icon: "linkedin" },
   { label: "Email", href: "mailto:patoletusharajit@gmail.com", icon: "mail" },
   { label: "Phone", href: "tel:+917767951871", icon: "phone" },
 ];

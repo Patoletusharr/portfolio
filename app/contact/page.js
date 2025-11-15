@@ -23,20 +23,20 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-12">
       {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-white mb-2">Contact</h1>
-        <p className="text-dark-muted">Get in touch for opportunities, collaborations, or questions</p>
+      <div className="animate-fade-in">
+        <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Contact</h1>
+        <p className="text-dark-text text-lg">Get in touch for opportunities, collaborations, or questions</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Contact Form */}
-        <div className="bg-dark-bg border border-dark-border rounded-xl p-6">
-          <h2 className="text-xl font-semibold text-white mb-6">Send a Message</h2>
-          <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="glass-card rounded-2xl p-8 animate-slide-up">
+          <h2 className="text-2xl font-bold text-white mb-8 tracking-tight">Send a Message</h2>
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-dark-text mb-2">
+              <label htmlFor="name" className="block text-sm font-semibold text-dark-text mb-3 tracking-wide">
                 Your Name
               </label>
               <input
@@ -46,13 +46,13 @@ export default function ContactPage() {
                 required
                 value={form.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-xl text-dark-text focus:border-primary focus:outline-none transition-colors"
+                className="w-full px-5 py-4 glass rounded-xl text-dark-text placeholder:text-dark-muted focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300"
                 placeholder="John Doe"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-dark-text mb-2">
+              <label htmlFor="email" className="block text-sm font-semibold text-dark-text mb-3 tracking-wide">
                 Email Address
               </label>
               <input
@@ -62,13 +62,13 @@ export default function ContactPage() {
                 required
                 value={form.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-xl text-dark-text focus:border-primary focus:outline-none transition-colors"
+                className="w-full px-5 py-4 glass rounded-xl text-dark-text placeholder:text-dark-muted focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300"
                 placeholder="john@example.com"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-dark-text mb-2">
+              <label htmlFor="message" className="block text-sm font-semibold text-dark-text mb-3 tracking-wide">
                 Message
               </label>
               <textarea
@@ -78,20 +78,20 @@ export default function ContactPage() {
                 required
                 value={form.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-xl text-dark-text focus:border-primary focus:outline-none transition-colors resize-none"
+                className="w-full px-5 py-4 glass rounded-xl text-dark-text placeholder:text-dark-muted focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 resize-none"
                 placeholder="Your message here..."
               />
             </div>
 
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-medium hover:shadow-glow transition-all"
+              className="w-full px-6 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-bold text-lg hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-300 tracking-wide"
             >
               {submitted ? "✓ Message Sent!" : "Send Message"}
             </button>
 
             {submitted && (
-              <p className="text-sm text-accent text-center">
+              <p className="text-sm text-accent text-center font-medium animate-fade-in">
                 Form captured locally. Connect to an API to send emails.
               </p>
             )}
@@ -99,59 +99,63 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Info */}
-        <div className="space-y-6">
-          <div className="bg-dark-bg border border-dark-border rounded-xl p-6">
-            <h2 className="text-xl font-semibold text-white mb-6">Contact Information</h2>
-            <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">📧</span>
+        <div className="space-y-6 animate-slide-up">
+          <div className="glass-card rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-white mb-8 tracking-tight">Contact Information</h2>
+            <div className="space-y-6">
+              <div className="flex items-start gap-5 group">
+                <span className="text-3xl group-hover:scale-125 transition-transform duration-300">📧</span>
                 <div>
-                  <p className="text-sm text-dark-muted mb-1">Email</p>
+                  <p className="text-xs text-dark-muted mb-2 uppercase tracking-wider font-semibold">Email</p>
                   <a
                     href={`mailto:${siteAuthor.email}`}
-                    className="text-primary hover:text-accent transition-colors"
+                    className="text-primary hover:text-accent transition-colors font-medium text-lg"
                   >
                     {siteAuthor.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">📱</span>
+              <div className="premium-divider"></div>
+
+              <div className="flex items-start gap-5 group">
+                <span className="text-3xl group-hover:scale-125 transition-transform duration-300">📱</span>
                 <div>
-                  <p className="text-sm text-dark-muted mb-1">Phone</p>
+                  <p className="text-xs text-dark-muted mb-2 uppercase tracking-wider font-semibold">Phone</p>
                   <a
                     href={`tel:${siteAuthor.phone}`}
-                    className="text-primary hover:text-accent transition-colors"
+                    className="text-primary hover:text-accent transition-colors font-medium text-lg"
                   >
                     {siteAuthor.phone}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">📍</span>
+              <div className="premium-divider"></div>
+
+              <div className="flex items-start gap-5 group">
+                <span className="text-3xl group-hover:scale-125 transition-transform duration-300">📍</span>
                 <div>
-                  <p className="text-sm text-dark-muted mb-1">Location</p>
-                  <p className="text-dark-text">{siteAuthor.location}</p>
+                  <p className="text-xs text-dark-muted mb-2 uppercase tracking-wider font-semibold">Location</p>
+                  <p className="text-dark-text font-medium text-lg">{siteAuthor.location}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-dark-bg border border-dark-border rounded-xl p-6">
-            <h2 className="text-xl font-semibold text-white mb-6">Connect on Social</h2>
-            <div className="grid grid-cols-2 gap-3">
+          <div className="glass-card rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-white mb-8 tracking-tight">Connect on Social</h2>
+            <div className="grid grid-cols-2 gap-4">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="flex items-center gap-3 px-4 py-3 bg-dark-card border border-dark-border rounded-xl hover:border-primary/50 transition-all group"
+                  className={`flex items-center gap-4 px-5 py-4 glass rounded-xl hover:scale-105 hover:shadow-glow transition-all duration-300 group ${getSocialBrandColor(link.icon)}`}
                 >
-                  <span className="text-xl">{getSocialIcon(link.icon)}</span>
-                  <span className="text-sm text-dark-text group-hover:text-primary transition-colors">
+                  <span className="text-2xl group-hover:rotate-12 transition-transform duration-300">{getSocialIcon(link.icon)}</span>
+                  <span className="text-sm text-dark-text group-hover:text-white transition-colors font-semibold tracking-wide">
                     {link.label}
                   </span>
                 </a>
@@ -180,4 +184,14 @@ function getSocialIcon(iconName) {
     phone: "📱",
   };
   return icons[iconName] || "🔗";
+}
+
+function getSocialBrandColor(iconName) {
+  const colors = {
+    github: "hover:bg-[#333]/20",
+    linkedin: "hover:bg-[#0077b5]/20",
+    mail: "hover:bg-primary/20",
+    phone: "hover:bg-accent/20",
+  };
+  return colors[iconName] || "hover:bg-primary/20";
 }

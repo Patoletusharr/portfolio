@@ -5,21 +5,21 @@ import { siteMeta } from "@/data/siteData";
 export const metadata = {
   title: siteMeta.title,
   description: siteMeta.description,
-  metadataBase: new URL("https://tusharpatole.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-mhxfktun2-tushar-patoles-projects.vercel.app"),
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-dark-bg text-dark-text">
-        <div className="min-h-screen py-6 lg:py-12">
+        <div className="min-h-screen py-8 lg:py-16">
           <div className="container-default">
-            <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-8 lg:gap-10">
               {/* Sidebar */}
               <Sidebar />
-              
+
               {/* Main Content */}
-              <main className="bg-dark-card border border-dark-border rounded-2xl p-6 lg:p-8">
+              <main className="glass-card rounded-3xl p-8 lg:p-12 shadow-glass animate-slide-up">
                 {children}
               </main>
             </div>
